@@ -1,0 +1,29 @@
+{
+  "name": "flipboxdigital/postmark",
+  "description": "Postmark adapter",
+  "version": "1.0.0",
+  "require": {
+    "wildbit/swiftmailer-postmark": "^2.1"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "flipbox\\postmark\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Postmark",
+    "handle": "postmark",
+    "developer": "Flipbox Digital",
+    "developerUrl": "https://www.flipboxdigital.com",
+    "changelogUrl": "https://raw.githubusercontent.com/flipbox/postmark/master/CHANGELOG.md",
+    "downloadUrl": "https://github.com/flipbox/postmark/archive/master.zip",
+    "class": "flipbox\\postmark\\Plugin",
+    "schemaVersion": "1.0.0"
+  }
+}

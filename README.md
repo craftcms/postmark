@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/flipbox/postmark/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/flipbox/postmark/?branch=master)
+
 Postmark for Craft CMS
 =====================
 
@@ -25,4 +27,4 @@ To install the plugin, follow these instructions.
 
 ## Setup
 
-Once Postmark is installed, go to Settings → Email, and change the “Transport Type” setting to “Postmark”. Enter your server Postmark API Key (which you can get from your [server credentials](https://account.postmarkapp.com/servers/) page) and click Credentials.
+Once Postmark is installed, go to Settings → Email, and change the “Transport Type” setting to “Postmark”. Enter your server Postmark API Key (which you can get from your [server](https://account.postmarkapp.com/servers/) page) and click Credentials.

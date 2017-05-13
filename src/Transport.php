@@ -8,6 +8,7 @@
 
 namespace flipbox\postmark;
 
+use craft\helpers\Json;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -26,7 +27,26 @@ class Transport extends \Postmark\Transport
         /** @var ResponseInterface $response */
         $response = parent::send($message, $failedRecipients);
 
-        return $response->getStatusCode() === 200;
+        // Check for errors
+        if ($response->getStatusCode() !== 200) {
+
+            $error = Json::decodeIfJson(
+                $response->getBody()->getContents()
+            );
+
+            if (is_array($error)) {
+                $error['StatusCode'] = $response->getStatusCode();
+            }
+
+            Postmark::error($error);
+
+            return false;
+
+        }
+
+        Postmark::info("Email sent successfully via Postmark Adapter.");
+
+        return true;
 
     }
 

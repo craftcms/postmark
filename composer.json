@@ -1,7 +1,7 @@
 {
   "name": "flipboxdigital/postmark",
   "description": "Postmark adapter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "require": {
     "wildbit/swiftmailer-postmark": "^2.1"
   },
@@ -23,7 +23,7 @@
     "developerUrl": "https://www.flipboxdigital.com",
     "changelogUrl": "https://raw.githubusercontent.com/flipbox/postmark/master/CHANGELOG.md",
     "downloadUrl": "https://github.com/flipbox/postmark/archive/master.zip",
-    "class": "flipbox\\postmark\\Plugin",
+    "class": "flipbox\\postmark\\Postmark",
     "schemaVersion": "1.0.0"
   }
 }

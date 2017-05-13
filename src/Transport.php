@@ -30,23 +30,51 @@ class Transport extends \Postmark\Transport
         // Check for errors
         if ($response->getStatusCode() !== 200) {
 
-            $error = Json::decodeIfJson(
-                $response->getBody()->getContents()
+            Postmark::error(
+                $this->assembleErrorMessageFromResponse($response)
             );
 
-            if (is_array($error)) {
-                $error['StatusCode'] = $response->getStatusCode();
-            }
-
-            Postmark::error($error);
-
-            return false;
+            return 0;
 
         }
 
         Postmark::info("Email sent successfully via Postmark Adapter.");
 
-        return true;
+        return $this->getRecipientCount($message);
+
+    }
+
+    /**
+     * @param \Swift_Mime_Message $message
+     * @return int
+     */
+    protected function getRecipientCount(\Swift_Mime_Message $message): int
+    {
+
+        return (
+            count((array)$message->getTo())
+            + count((array)$message->getCc())
+            + count((array)$message->getBcc())
+        );
+
+    }
+
+    /**
+     * @param ResponseInterface $response
+     * @return array|mixed
+     */
+    protected function assembleErrorMessageFromResponse(ResponseInterface $response)
+    {
+
+        $error = Json::decodeIfJson(
+            $response->getBody()->getContents()
+        );
+
+        if (is_array($error)) {
+            $error['StatusCode'] = $response->getStatusCode();
+        }
+
+        return $error;
 
     }
 

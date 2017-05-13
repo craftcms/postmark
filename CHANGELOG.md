@@ -1,6 +1,10 @@
 Changelog
 =========
- 
+
+## [1.0.2] - 2017-05-13
+### Changed
+- Changed adapter send response to return the number of recipients
+
 ## [1.0.1] - 2017-05-13
 ### Added
 - Logging to Postmark adapter

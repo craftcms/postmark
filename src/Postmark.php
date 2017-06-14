@@ -20,13 +20,11 @@ use yii\base\Event;
  */
 class Postmark extends Plugin
 {
-
     /**
      * @inheritdoc
      */
     public function init()
     {
-
         parent::init();
 
         Event::on(
@@ -36,7 +34,6 @@ class Postmark extends Plugin
                 $event->types[] = Adapter::class;
             }
         );
-
     }
 
     /**
@@ -71,5 +68,4 @@ class Postmark extends Plugin
     {
         Craft::error($message, $category);
     }
-
 }

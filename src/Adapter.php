@@ -17,7 +17,6 @@ use craft\mail\transportadapters\BaseTransportAdapter;
  */
 class Adapter extends BaseTransportAdapter
 {
-
     /**
      * @inheritdoc
      */
@@ -76,5 +75,4 @@ class Adapter extends BaseTransportAdapter
             'constructArgs' => [$this->token]
         ];
     }
-
 }

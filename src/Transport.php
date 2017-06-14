@@ -17,31 +17,26 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Transport extends \Postmark\Transport
 {
-
     /**
      * {@inheritdoc}
      */
     public function send(\Swift_Mime_Message $message, &$failedRecipients = null)
     {
-
         /** @var ResponseInterface $response */
         $response = parent::send($message, $failedRecipients);
 
         // Check for errors
         if ($response->getStatusCode() !== 200) {
-
             Postmark::error(
                 $this->assembleErrorMessageFromResponse($response)
             );
 
             return 0;
-
         }
 
         Postmark::info("Email sent successfully via Postmark Adapter.");
 
         return $this->getRecipientCount($message);
-
     }
 
     /**
@@ -50,13 +45,11 @@ class Transport extends \Postmark\Transport
      */
     protected function getRecipientCount(\Swift_Mime_Message $message): int
     {
-
         return (
             count((array)$message->getTo())
             + count((array)$message->getCc())
             + count((array)$message->getBcc())
         );
-
     }
 
     /**
@@ -65,7 +58,6 @@ class Transport extends \Postmark\Transport
      */
     protected function assembleErrorMessageFromResponse(ResponseInterface $response)
     {
-
         $error = Json::decodeIfJson(
             $response->getBody()->getContents()
         );
@@ -75,7 +67,5 @@ class Transport extends \Postmark\Transport
         }
 
         return $error;
-
     }
-
 }

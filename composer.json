@@ -1,6 +1,7 @@
 {
   "name": "flipboxdigital/postmark",
   "description": "Postmark adapter",
+  "type": "craft-plugin",
   "version": "1.0.2",
   "require": {
     "wildbit/swiftmailer-postmark": "^2.1"

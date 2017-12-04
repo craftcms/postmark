@@ -3,11 +3,13 @@
   "description": "Postmark mail adapter",
   "version": "1.0.0-rc.1",
   "type": "craft-plugin",
-  "minimum-stability": "beta",
-  "prefer-stable": true,
-  "config": {
-    "optimize-autoloader": true
-  },
+  "keywords": [
+    "cms",
+    "craftcms",
+    "postmark",
+    "mailer",
+    "yii2"
+  ],
   "require": {
     "craftcms/cms": "dev-release/3.0.0-RC1",
     "flipboxdigital/swiftmailer-postmark": "^3.0"
@@ -27,17 +29,20 @@
       "flipbox\\postmark\\tests\\": "tests/src/"
     }
   },
+  "support": {
+    "email": "support@flipboxfactory.com",
+    "issues": "https://github.com/flipboxfactory/craft-postmark/issues?state=open",
+    "source": "https://github.com/flipboxfactory/craft-postmark",
+    "docs": "https://github.com/flipboxfactory/craft-postmark",
+    "rss": "https://github.com/flipboxfactory/craft-postmark/commits/master.atom"
+  },
   "extra": {
     "name": "Postmark",
     "handle": "postmark",
+    "class": "flipbox\\postmark\\Postmark",
     "developer": "Flipbox Digital",
     "developerUrl": "https://www.flipboxdigital.com",
     "changelogUrl": "https://raw.githubusercontent.com/flipboxfactory/craft-postmark/master/CHANGELOG.md",
-    "downloadUrl": "https://github.com/flipboxfactory/craft-postmark/archive/master.zip",
-    "class": "flipbox\\postmark\\Postmark",
-    "schemaVersion": "1.0.0",
-    "branch-alias": {
-      "dev-master": "1.0.x-dev"
-    }
+    "downloadUrl": "https://github.com/flipboxfactory/craft-postmark/archive/master.zip"
   }
 }

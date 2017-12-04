@@ -1,10 +1,11 @@
 # Postmark for Craft CMS
-[![Latest Version](https://img.shields.io/github/release/flipbox/postmark.svg?style=flat-square)](https://github.com/flipbox/postmark/releases)
+[![Join the chat at https://gitter.im/flipboxfactory/craft-postmark](https://badges.gitter.im/flipboxfactory/craft-postmark.svg)](https://gitter.im/flipboxfactory/craft-postmark?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Latest Version](https://img.shields.io/github/release/flipboxfactory/craft-postmark.svg?style=flat-square)](https://github.com/flipboxfactory/craft-postmark/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/flipbox/postmark/master.svg?style=flat-square)](https://travis-ci.org/flipbox/postmark)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/flipbox/postmark.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipbox/postmark/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/flipbox/postmark.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipbox/postmark)
-[![Total Downloads](https://img.shields.io/packagist/dt/flipboxdigital/postmark.svg?style=flat-square)](https://packagist.org/packages/flipboxdigital/postmark)
+[![Build Status](https://img.shields.io/travis/flipboxfactory/craft-postmark/master.svg?style=flat-square)](https://travis-ci.org/flipboxfactory/craft-postmark)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/flipboxfactory/craft-postmark.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipboxfactory/craft-postmark/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/flipboxfactory/craft-postmark.svg?style=flat-square)](https://scrutinizer-ci.com/g/flipboxfactory/craft-postmark)
+[![Total Downloads](https://img.shields.io/packagist/dt/flipboxfactory/craft-postmark.svg?style=flat-square)](https://packagist.org/packages/flipboxfactory/craft-postmark)
 
 This plugin provides a [Postmark](http://www.postmarkapp.com/) integration for [Craft CMS](https://craftcms.com/).
 
@@ -24,7 +25,7 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require flipboxdigital/postmark
+        composer require flipboxfactory/craft-postmark
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Postmark.
 

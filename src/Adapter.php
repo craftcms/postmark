@@ -2,8 +2,8 @@
 
 /**
  * @copyright  Copyright (c) Flipbox Digital Limited
- * @license    https://github.com/flipbox/postmark/blob/master/LICENSE.md
- * @link       https://github.com/flipbox/postmark
+ * @license    https://github.com/flipboxfactory/craft-postmark/blob/master/LICENSE.md
+ * @link       https://github.com/flipboxfactory/craft-postmark
  */
 
 namespace flipbox\postmark;

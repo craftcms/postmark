@@ -2,14 +2,14 @@
 
 /**
  * @copyright  Copyright (c) Flipbox Digital Limited
- * @license    https://github.com/flipbox/postmark/blob/master/LICENSE.md
- * @link       https://github.com/flipbox/postmark
+ * @license    https://github.com/flipboxfactory/craft-postmark/blob/master/LICENSE.md
+ * @link       https://github.com/flipboxfactory/craft-postmark
  */
 
 namespace flipbox\postmark;
 
-use craft\helpers\Json;
 use Psr\Http\Message\ResponseInterface;
+use Swift_Mime_SimpleMessage;
 
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
@@ -20,52 +20,20 @@ class Transport extends \Postmark\Transport
     /**
      * {@inheritdoc}
      */
-    public function send(\Swift_Mime_Message $message, &$failedRecipients = null)
+    public function send(Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
     {
         /** @var ResponseInterface $response */
         $response = parent::send($message, $failedRecipients);
 
         // Check for errors
-        if ($response->getStatusCode() !== 200) {
-            Postmark::error(
-                $this->assembleErrorMessageFromResponse($response)
-            );
+        if ($response == 0) {
+            Postmark::error("Failed to send email via Postmark Adapter.");
 
-            return 0;
+            return $response;
         }
 
         Postmark::info("Email sent successfully via Postmark Adapter.");
 
-        return $this->getRecipientCount($message);
-    }
-
-    /**
-     * @param \Swift_Mime_Message $message
-     * @return int
-     */
-    protected function getRecipientCount(\Swift_Mime_Message $message): int
-    {
-        return (
-            count((array)$message->getTo())
-            + count((array)$message->getCc())
-            + count((array)$message->getBcc())
-        );
-    }
-
-    /**
-     * @param ResponseInterface $response
-     * @return array|mixed
-     */
-    protected function assembleErrorMessageFromResponse(ResponseInterface $response)
-    {
-        $error = Json::decodeIfJson(
-            $response->getBody()->getContents()
-        );
-
-        if (is_array($error)) {
-            $error['StatusCode'] = $response->getStatusCode();
-        }
-
-        return $error;
+        return $response;
     }
 }

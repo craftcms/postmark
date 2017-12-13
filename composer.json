@@ -11,7 +11,7 @@
     "yii2"
   ],
   "require": {
-    "craftcms/cms": "~3.0.0-RC1",
+    "craftcms/cms": "^3.0.0-RC1",
     "flipboxdigital/swiftmailer-postmark": "^3.0"
   },
   "require-dev": {

@@ -1,5 +1,8 @@
 Changelog
 =========
+## 1.0.0-rc.1.2 - 2017-12-13
+### Changed
+- Min requirement of Craft
 
 ## 1.0.0-rc.1.1 - 2017-12-05
 ### Changed

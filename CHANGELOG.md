@@ -1,7 +1,7 @@
 Changelog
 =========
 
-## Unreleased
+## 1.0.0 - 2018-10-15
 ### Added
 - Settings which allows for token override
 

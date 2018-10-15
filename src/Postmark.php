@@ -17,6 +17,8 @@ use yii\base\Event;
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
  * @since 1.0.0
+ *
+ * @method Settings getSettings()
  */
 class Postmark extends Plugin
 {
@@ -34,6 +36,19 @@ class Postmark extends Plugin
                 $event->types[] = Adapter::class;
             }
         );
+    }
+
+    /*******************************************
+     * SETTINGS
+     *******************************************/
+
+    /**
+     * @inheritdoc
+     * @return Settings
+     */
+    public function createSettingsModel()
+    {
+        return new Settings();
     }
 
     /**

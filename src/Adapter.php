@@ -28,7 +28,7 @@ class Adapter extends BaseTransportAdapter
     /**
      * @var string
      */
-    public $token;
+    private $token;
 
     /**
      * @inheritdoc
@@ -45,23 +45,81 @@ class Adapter extends BaseTransportAdapter
      */
     public function rules()
     {
-        return [
-            [
+        $rules = parent::rules();
+
+        if (!$this->tokenOverride()) {
+            $rules = array_merge(
+                $rules,
                 [
-                    'token'
-                ],
-                'required'
-            ]
-        ];
+                    [
+                        [
+                            'token'
+                        ],
+                        'required'
+                    ]
+                ]
+            );
+        }
+
+        return $rules;
     }
 
     /**
      * @inheritdoc
      */
+    public function attributes()
+    {
+        return array_merge(
+            parent::attributes(),
+            [
+                'token'
+            ]
+        );
+    }
+
+    /**
+     * @param string|null $token
+     * @return $this
+     */
+    public function setToken(string $token = null)
+    {
+        if ($this->tokenOverride()) {
+            Postmark::warning("Attempting to set token although it's already set via config.");
+            return $this;
+        }
+
+        $this->token = $token;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * Identify whether the token can be set (or if it has been set via config)
+     *
+     * @return bool
+     */
+    protected function tokenOverride(): bool
+    {
+        return !empty(Postmark::getInstance()->getSettings()->token);
+    }
+
+    /**
+     * @inheritdoc
+     * @throws \Twig_Error_Loader
+     * @throws \yii\base\Exception
+     */
     public function getSettingsHtml()
     {
         return Craft::$app->getView()->renderTemplate('postmark/settings', [
-            'adapter' => $this
+            'adapter' => $this,
+            'settings' => Postmark::getInstance()->getSettings()
         ]);
     }
 
@@ -72,7 +130,7 @@ class Adapter extends BaseTransportAdapter
     {
         return [
             'class' => Transport::class,
-            'constructArgs' => [$this->token]
+            'constructArgs' => [Postmark::getInstance()->getSettings()->token ?: $this->token]
         ];
     }
 }

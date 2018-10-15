@@ -1,13 +1,30 @@
 {% import "_includes/forms" as forms %}
 
 {% set tokenOverride = settings.token|length ? 1 : 0 %}
+{% set label = "Server Token"|t('postmark') %}
+{% set instructions = "The Postmark server api token."|t('postmark') %}
 
-{{ forms.textField({
-    label: "Server Token"|t('postmark'),
-    instructions: "The Postmark server api token."|t('postmark') ~ (tokenOverride ? "<small style='font-size: 90%; color: #ff8100;'>[" ~ "CONFIG"|t('postmark') ~ "]</small>" : ""),
-    id: 'token',
-    name: 'token',
-    value: settings.token ?: adapter.token,
-    errors: adapter.getErrors('token'),
-    disabled: tokenOverride
-}) }}
+{% if tokenOverride %}
+    {{ forms.textField({
+        label: label,
+        instructions: instructions ~ (tokenOverride ? "<small style='font-size: 90%; color: #ff8100;'> [" ~ "CONFIG"|t('postmark') ~ "]</small>" : ""),
+        value: settings.token,
+        errors: adapter.getErrors('token'),
+        disabled: true
+    }) }}
+
+    {{ forms.hidden({
+        id: 'token',
+        name: 'token',
+        value: adapter.token ?: settings.token
+    }) }}
+{% else %}
+    {{ forms.textField({
+        label: label,
+        instructions: instructions,
+        id: 'token',
+        name: 'token',
+        value: settings.token ?: adapter.token,
+        errors: adapter.getErrors('token')
+    }) }}
+{% endif %}

@@ -1,5 +1,13 @@
 Changelog
 =========
+
+## Unreleased
+### Added
+- Settings which allows for token override
+
+### Changed
+- Using Postmark's first party library
+
 ## 1.0.0-rc.1.2 - 2017-12-13
 ### Changed
 - Min requirement of Craft

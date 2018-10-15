@@ -10,6 +10,7 @@ namespace flipbox\postmark;
 
 use Craft;
 use craft\mail\transportadapters\BaseTransportAdapter;
+use Postmark\Transport;
 
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
@@ -83,11 +84,6 @@ class Adapter extends BaseTransportAdapter
      */
     public function setToken(string $token = null)
     {
-        if ($this->tokenOverride()) {
-            Postmark::warning("Attempting to set token although it's already set via config.");
-            return $this;
-        }
-
         $this->token = $token;
         return $this;
     }

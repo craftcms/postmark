@@ -1,7 +1,7 @@
 {
   "name": "flipboxfactory/craft-postmark",
   "description": "Postmark mail adapter",
-  "version": "1.0.0-rc.1.2",
+  "version": "1.0.0",
   "type": "craft-plugin",
   "keywords": [
     "cms",
@@ -11,8 +11,8 @@
     "yii2"
   ],
   "require": {
-    "craftcms/cms": "^3.0.0-RC1",
-    "flipboxdigital/swiftmailer-postmark": "^3.0"
+    "craftcms/cms": "^3.0",
+    "wildbit/swiftmailer-postmark": "^3.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.0",

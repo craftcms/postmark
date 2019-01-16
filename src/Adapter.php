@@ -126,7 +126,7 @@ class Adapter extends BaseTransportAdapter
     {
         return [
             'class' => Transport::class,
-            'constructArgs' => [Postmark::getInstance()->getSettings()->token ?: $this->token]
+            'constructArgs' => [Postmark::getInstance()->getSettings()->token ?: Craft::parseEnv($this->token)]
         ];
     }
 }

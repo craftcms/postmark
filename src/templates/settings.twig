@@ -19,12 +19,13 @@
         value: adapter.token ?: settings.token
     }) }}
 {% else %}
-    {{ forms.textField({
+    {{ forms.autosuggestField({
         label: label,
         instructions: instructions,
         id: 'token',
         name: 'token',
         value: settings.token ?: adapter.token,
+        suggestEnvVars: true,
         errors: adapter.getErrors('token')
     }) }}
 {% endif %}

@@ -30,11 +30,11 @@
     }
   },
   "support": {
-    "email": "support@flipboxfactory.com",
-    "issues": "https://github.com/flipboxfactory/craft-postmark/issues?state=open",
-    "source": "https://github.com/flipboxfactory/craft-postmark",
-    "docs": "https://github.com/flipboxfactory/craft-postmark",
-    "rss": "https://github.com/flipboxfactory/craft-postmark/commits/master.atom"
+    "email": "benoit.rouleau@icloud.com",
+    "issues": "https://github.com/benface/craft-postmark/issues?state=open",
+    "source": "https://github.com/benface/craft-postmark",
+    "docs": "https://github.com/benface/craft-postmark",
+    "rss": "https://github.com/benface/craft-postmark/commits/master.atom"
   },
   "extra": {
     "name": "Postmark",
@@ -42,7 +42,7 @@
     "class": "flipbox\\postmark\\Postmark",
     "developer": "Flipbox Digital",
     "developerUrl": "https://www.flipboxdigital.com",
-    "changelogUrl": "https://raw.githubusercontent.com/flipboxfactory/craft-postmark/master/CHANGELOG.md",
-    "downloadUrl": "https://github.com/flipboxfactory/craft-postmark/archive/master.zip"
+    "changelogUrl": "https://raw.githubusercontent.com/benface/craft-postmark/master/CHANGELOG.md",
+    "downloadUrl": "https://github.com/benface/craft-postmark/archive/master.zip"
   }
 }

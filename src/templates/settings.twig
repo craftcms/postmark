@@ -2,7 +2,7 @@
 
 {% set tokenOverride = settings.token|length ? 1 : 0 %}
 {% set label = "Server Token"|t('postmark') %}
-{% set instructions = "The Postmark server api token."|t('postmark') %}
+{% set instructions = "The Postmark server API token."|t('postmark') %}
 
 {% if tokenOverride %}
     {{ forms.textField({

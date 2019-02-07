@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @copyright  Copyright (c) Flipbox Digital Limited
- * @license    https://github.com/flipboxfactory/craft-postmark/blob/master/LICENSE.md
- * @link       https://github.com/flipboxfactory/craft-postmark
+ * @copyright  Copyright (c) Flipbox Digital Limited & Benoît Rouleau
+ * @license    https://github.com/benface/craft-postmark/blob/master/LICENSE.md
+ * @link       https://github.com/benface/craft-postmark
  */
 
 namespace flipbox\postmark;
@@ -15,7 +15,7 @@ use craft\helpers\MailerHelper;
 use yii\base\Event;
 
 /**
- * @author Flipbox Factory <hello@flipboxfactory.com>
+ * @author Flipbox Factory
  * @since 1.0.0
  *
  * @method Settings getSettings()

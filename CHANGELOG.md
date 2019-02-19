@@ -1,5 +1,13 @@
 # Release Notes for Postmark for Craft CMS
 
+## 2.0.0 - Unreleased
+
+### Changed
+- The plugin’s package name is now `craftcms/postmark`.
+
+### Removed
+- Removed support for `config/postmark.php`.
+
 ## 1.0.1 - 2019-02-07
 
 ### Added

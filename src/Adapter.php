@@ -1,23 +1,26 @@
 <?php
-
 /**
- * @copyright  Copyright (c) Flipbox Digital Limited & Benoît Rouleau
- * @license    https://github.com/benface/craft-postmark/blob/master/LICENSE.md
- * @link       https://github.com/benface/craft-postmark
+ * @copyright Copyright (c) Pixel & Tonic, Inc.
  */
 
-namespace flipbox\postmark;
+namespace craftcms\postmark;
 
 use Craft;
+use craft\behaviors\EnvAttributeParserBehavior;
 use craft\mail\transportadapters\BaseTransportAdapter;
 use Postmark\Transport;
 
 /**
- * @author Flipbox Factory
- * @since 1.0.0
+ * Adapter represents the Postmark mail adapter.
+ *
+ * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
+ * @since 1.0
  */
 class Adapter extends BaseTransportAdapter
 {
+    // Static
+    // =========================================================================
+
     /**
      * @inheritdoc
      */
@@ -26,10 +29,16 @@ class Adapter extends BaseTransportAdapter
         return 'Postmark';
     }
 
+    // Properties
+    // =========================================================================
+
     /**
      * @var string
      */
-    private $token;
+    public $token;
+
+    // Public Methods
+    // =========================================================================
 
     /**
      * @inheritdoc
@@ -44,78 +53,35 @@ class Adapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
+    public function behaviors()
+    {
+        return [
+            'parser' => [
+                'class' => EnvAttributeParserBehavior::class,
+                'attributes' => [
+                    'token',
+                ],
+            ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         $rules = parent::rules();
-
-        if (!$this->tokenOverride()) {
-            $rules = array_merge(
-                $rules,
-                [
-                    [
-                        [
-                            'token'
-                        ],
-                        'required'
-                    ]
-                ]
-            );
-        }
-
+        $rules[] = [['token'], 'required'];
         return $rules;
     }
 
     /**
      * @inheritdoc
      */
-    public function attributes()
-    {
-        return array_merge(
-            parent::attributes(),
-            [
-                'token'
-            ]
-        );
-    }
-
-    /**
-     * @param string|null $token
-     * @return $this
-     */
-    public function setToken(string $token = null)
-    {
-        $this->token = $token;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getToken()
-    {
-        return $this->token;
-    }
-
-    /**
-     * Identify whether the token can be set (or if it has been set via config)
-     *
-     * @return bool
-     */
-    protected function tokenOverride(): bool
-    {
-        return !empty(Postmark::getInstance()->getSettings()->token);
-    }
-
-    /**
-     * @inheritdoc
-     * @throws \Twig_Error_Loader
-     * @throws \yii\base\Exception
-     */
     public function getSettingsHtml()
     {
         return Craft::$app->getView()->renderTemplate('postmark/settings', [
             'adapter' => $this,
-            'settings' => Postmark::getInstance()->getSettings()
         ]);
     }
 
@@ -126,7 +92,7 @@ class Adapter extends BaseTransportAdapter
     {
         return [
             'class' => Transport::class,
-            'constructArgs' => [Postmark::getInstance()->getSettings()->token ?: Craft::parseEnv($this->token)]
+            'constructArgs' => [Craft::parseEnv($this->token)]
         ];
     }
 }

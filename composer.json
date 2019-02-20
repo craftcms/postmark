@@ -1,7 +1,7 @@
 {
-  "name": "flipboxfactory/craft-postmark",
-  "description": "Postmark mail adapter",
-  "version": "1.0.1",
+  "name": "craftcms/postmark",
+  "description": "Postmark adapter for Craft CMS",
+  "version": "2.0.0",
   "type": "craft-plugin",
   "keywords": [
     "cms",
@@ -10,9 +10,23 @@
     "mailer",
     "yii2"
   ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/postmark/issues?state=open",
+    "source": "https://github.com/craftcms/postmark",
+    "docs": "https://github.com/craftcms/postmark",
+    "rss": "https://github.com/craftcms/postmark/commits/master.atom"
+  },
   "require": {
-    "craftcms/cms": "^3.1",
-    "wildbit/swiftmailer-postmark": "^3.0"
+    "craftcms/cms": "^3.1.5",
+    "wildbit/swiftmailer-postmark": "^3.0.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.0",
@@ -21,28 +35,16 @@
   },
   "autoload": {
     "psr-4": {
-      "flipbox\\postmark\\": "src/"
+      "craftcms\\postmark\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "flipbox\\postmark\\tests\\": "tests/src/"
+      "craftcms\\postmark\\tests\\": "tests/src/"
     }
-  },
-  "support": {
-    "email": "benoit.rouleau@icloud.com",
-    "issues": "https://github.com/benface/craft-postmark/issues?state=open",
-    "source": "https://github.com/benface/craft-postmark",
-    "docs": "https://github.com/benface/craft-postmark",
-    "rss": "https://github.com/benface/craft-postmark/commits/master.atom"
   },
   "extra": {
     "name": "Postmark",
-    "handle": "postmark",
-    "class": "flipbox\\postmark\\Postmark",
-    "developer": "Flipbox Digital",
-    "developerUrl": "https://www.flipboxdigital.com",
-    "changelogUrl": "https://raw.githubusercontent.com/benface/craft-postmark/master/CHANGELOG.md",
-    "downloadUrl": "https://github.com/benface/craft-postmark/archive/master.zip"
+    "handle": "postmark"
   }
 }

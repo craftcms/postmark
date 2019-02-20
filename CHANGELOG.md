@@ -2,7 +2,7 @@
 
 ## 2.0.0 - 2019-02-19
 
-> {note} The plugin’s package name has changed to `craftcms/postmark`. After updating to Postmark 2.0 or later, make sure you remove the old package by running `composer remove `flipboxfactory/craft-postmark` from your terminal.
+> {note} The plugin’s package name has changed to `craftcms/postmark`. After updating to Postmark 2.0 or later, make sure you remove the old package by running `composer remove flipboxfactory/craft-postmark` from your terminal.
 
 ### Removed
 - Removed support for `config/postmark.php`.

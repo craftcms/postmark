@@ -55,14 +55,14 @@ class Adapter extends BaseTransportAdapter
      */
     public function behaviors()
     {
-        return [
-            'parser' => [
-                'class' => EnvAttributeParserBehavior::class,
-                'attributes' => [
-                    'token',
-                ],
+        $behaviors = parent::behaviors();
+        $behaviors['parser'] = [
+            'class' => EnvAttributeParserBehavior::class,
+            'attributes' => [
+                'token',
             ],
         ];
+        return $behaviors;
     }
 
     /**

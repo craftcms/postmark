@@ -1,5 +1,10 @@
 # Release Notes for Postmark for Craft CMS
 
+## 2.0.1 - 2019-02-22
+
+### Fixed
+- Fixed a bug where `craftcms\postmark\Adapter` wasn’t triggering the `defineBehaviors` event.
+
 ## 2.0.0 - 2019-02-19
 
 > {note} The plugin’s package name has changed to `craftcms/postmark`. After updating to Postmark 2.0 or later, make sure you remove the old package by running `composer remove flipboxfactory/craft-postmark` from your terminal.

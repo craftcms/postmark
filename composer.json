@@ -1,7 +1,7 @@
 {
   "name": "craftcms/postmark",
   "description": "Postmark adapter for Craft CMS",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "craft-plugin",
   "keywords": [
     "cms",
@@ -21,7 +21,7 @@
     "email": "support@craftcms.com",
     "issues": "https://github.com/craftcms/postmark/issues?state=open",
     "source": "https://github.com/craftcms/postmark",
-    "docs": "https://github.com/craftcms/postmark",
+    "docs": "https://github.com/craftcms/postmark/blob/master/README.md",
     "rss": "https://github.com/craftcms/postmark/commits/master.atom"
   },
   "require": {
@@ -45,6 +45,7 @@
   },
   "extra": {
     "name": "Postmark",
-    "handle": "postmark"
+    "handle": "postmark",
+    "documentationUrl": "https://github.com/craftcms/postmark/blob/master/README.md"
   }
 }

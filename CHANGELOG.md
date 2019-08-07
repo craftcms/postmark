@@ -1,5 +1,10 @@
 # Release Notes for Postmark for Craft CMS
 
+## Unreleased
+
+### Fixed
+- Fixed a where the project config could leave old plugin settings in-tact even though they’re not needed anymore. ([#10](https://github.com/craftcms/postmark/issues/10))
+
 ## 2.0.1 - 2019-02-22
 
 ### Fixed

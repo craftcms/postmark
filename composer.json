@@ -29,8 +29,6 @@
     "wildbit/swiftmailer-postmark": "^3.0.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.0",
-    "squizlabs/php_codesniffer": "^2.0",
     "swiftmailer/swiftmailer": "~6.0"
   },
   "autoload": {

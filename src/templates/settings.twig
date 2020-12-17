@@ -9,3 +9,13 @@
     suggestEnvVars: true,
     errors: adapter.getErrors('token')
 }) }}
+
+{{ forms.autosuggestField({
+    label: "Message Stream ID"|t('postmark'),
+    instructions: "The Postmark Message Stream ID. (Default: outbound)"|t('postmark'),
+    id: 'messageStream',
+    name: 'messageStream',
+    value: adapter.messageStream,
+    suggestEnvVars: true,
+    errors: adapter.getErrors('messageStream')
+}) }}

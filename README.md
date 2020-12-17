@@ -33,6 +33,12 @@ composer require craftcms/postmark
 
 ## Setup
 
-Once Postmark is installed, go to Settings → Email, and change the “Transport Type” setting to “Postmark”. Enter your Postmark Server Token (which you can get from your [server](https://account.postmarkapp.com/servers/) page under “Credentials”), then click Save.
+Once Postmark is installed:
 
-> **Tip:** The Server Token setting can be set to an environment variable. See [Environmental Configuration](https://docs.craftcms.com/v3/config/environments.html) in the Craft docs to learn more about that.
+1. Go to **Settings** → **Email**.
+2. Change the **Transport Type** setting to **Postmark**.
+3. Enter your **Postmark Server Token** (which you can get from your [server](https://account.postmarkapp.com/servers/) page under “API Tokens”).
+4. [Optional] Enter the [**Stream ID** for the Message Stream](https://postmarkapp.com/support/article/1207-how-to-create-and-send-through-message-streams) you’d like to use. (The default transactional Message Stream will be used if this is left blank.)
+5. Click **Save**.
+
+> **Tip:** The Server Token and Message Stream ID settings can be set using environment variables. See [Environmental Configuration](https://docs.craftcms.com/v3/config/environments.html) in the Craft docs to learn more about that.

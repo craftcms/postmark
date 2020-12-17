@@ -1,5 +1,10 @@
 # Release Notes for Postmark for Craft CMS
 
+## 2.0.3 - 2020-12-17
+
+### Added
+- Added support for specifying a [Message Stream](https://postmarkapp.com/message-streams) ID on the email settings page.
+
 ## 2.0.2 - 2019-08-07
 
 ### Fixed

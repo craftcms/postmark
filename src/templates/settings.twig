@@ -12,7 +12,7 @@
 
 {{ forms.autosuggestField({
     label: "Message Stream ID"|t('postmark'),
-    instructions: "The Postmark Message Stream ID. (Default: outbound)"|t('postmark'),
+    instructions: "The Postmark Message Stream ID. (The default transactional Message Stream will be used if this is left blank.)"|t('postmark'),
     id: 'messageStream',
     name: 'messageStream',
     value: adapter.messageStream,

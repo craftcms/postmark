@@ -1,5 +1,10 @@
 # Release Notes for Postmark for Craft CMS
 
+## 2.1.0 - 2021-02-10
+
+### Added
+- Added the **Message Stream ID** setting. ([#12](https://github.com/craftcms/postmark/pull/12))
+
 ## 2.0.3 - 2020-12-17
 
 ### Added

@@ -37,6 +37,11 @@ class Adapter extends BaseTransportAdapter
      */
     public $token;
 
+    /**
+     * @var string
+     */
+    public $messageStream;
+
     // Public Methods
     // =========================================================================
 
@@ -46,7 +51,8 @@ class Adapter extends BaseTransportAdapter
     public function attributeLabels()
     {
         return [
-            'token' => Craft::t('postmark', 'Token')
+            'token' => Craft::t('postmark', 'Token'),
+            'messageStream' => Craft::t('postmark', 'Message Stream ID')
         ];
     }
 
@@ -60,6 +66,7 @@ class Adapter extends BaseTransportAdapter
             'class' => EnvAttributeParserBehavior::class,
             'attributes' => [
                 'token',
+                'messageStream',
             ],
         ];
         return $behaviors;
@@ -92,7 +99,7 @@ class Adapter extends BaseTransportAdapter
     {
         return [
             'class' => Transport::class,
-            'constructArgs' => [Craft::parseEnv($this->token)]
+            'constructArgs' => [Craft::parseEnv($this->token), ['X-PM-Message-Stream' => Craft::parseEnv($this->messageStream)]]
         ];
     }
 }

@@ -18,9 +18,6 @@ use Postmark\Transport;
  */
 class Adapter extends BaseTransportAdapter
 {
-    // Static
-    // =========================================================================
-
     /**
      * @inheritdoc
      */
@@ -28,9 +25,6 @@ class Adapter extends BaseTransportAdapter
     {
         return 'Postmark';
     }
-
-    // Properties
-    // =========================================================================
 
     /**
      * @var string
@@ -41,9 +35,6 @@ class Adapter extends BaseTransportAdapter
      * @var string
      */
     public $messageStream;
-
-    // Public Methods
-    // =========================================================================
 
     /**
      * @inheritdoc

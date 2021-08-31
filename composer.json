@@ -25,7 +25,7 @@
     "rss": "https://github.com/craftcms/postmark/commits/master.atom"
   },
   "require": {
-    "craftcms/cms": "^3.1.5",
+    "craftcms/cms": "^3.4.0",
     "wildbit/swiftmailer-postmark": "^3.3.0"
   },
   "require-dev": {

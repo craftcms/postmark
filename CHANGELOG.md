@@ -1,5 +1,10 @@
 # Release Notes for Postmark for Craft CMS
 
+## Unreleased
+
+### Changed
+- Postmark now requires Craft 3.4 or later.
+
 ## 2.1.0 - 2021-02-10
 
 ### Added

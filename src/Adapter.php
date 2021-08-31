@@ -66,11 +66,11 @@ class Adapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function rules()
+    protected function defineRules(): array
     {
-        $rules = parent::rules();
-        $rules[] = [['token'], 'required'];
-        return $rules;
+        return [
+            [['token'], 'required'],
+        ];
     }
 
     /**

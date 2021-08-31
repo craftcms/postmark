@@ -43,7 +43,7 @@ class Adapter extends BaseTransportAdapter
     {
         return [
             'token' => Craft::t('postmark', 'Token'),
-            'messageStream' => Craft::t('postmark', 'Message Stream ID')
+            'messageStream' => Craft::t('postmark', 'Message Stream ID'),
         ];
     }
 
@@ -90,7 +90,7 @@ class Adapter extends BaseTransportAdapter
     {
         return [
             'class' => Transport::class,
-            'constructArgs' => [Craft::parseEnv($this->token), ['X-PM-Message-Stream' => Craft::parseEnv($this->messageStream)]]
+            'constructArgs' => [Craft::parseEnv($this->token), ['X-PM-Message-Stream' => Craft::parseEnv($this->messageStream)]],
         ];
     }
 }

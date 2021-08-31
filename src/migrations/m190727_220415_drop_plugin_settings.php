@@ -4,7 +4,6 @@ namespace craftcms\postmark\migrations;
 
 use Craft;
 use craft\db\Migration;
-use craftcms\postmark\Adapter;
 
 /**
  * m190727_220415_drop_plugin_settings migration.

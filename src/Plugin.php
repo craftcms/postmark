@@ -5,7 +5,6 @@
 
 namespace craftcms\postmark;
 
-use Craft;
 use craft\events\RegisterComponentTypesEvent;
 use craft\helpers\MailerHelper;
 use yii\base\Event;
@@ -21,7 +20,7 @@ class Plugin extends \craft\base\Plugin
     /**
      * @inheritdoc
      */
-    public $schemaVersion = '2.0.1';
+    public string $schemaVersion = '2.0.1';
 
     /**
      * @inheritdoc

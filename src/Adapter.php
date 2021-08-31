@@ -29,12 +29,12 @@ class Adapter extends BaseTransportAdapter
     /**
      * @var string
      */
-    public $token;
+    public string $token;
 
     /**
-     * @var string
+     * @var string|null
      */
-    public $messageStream;
+    public ?string $messageStream = null;
 
     /**
      * @inheritdoc
@@ -50,7 +50,7 @@ class Adapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         $behaviors = parent::behaviors();
         $behaviors['parser'] = [
@@ -76,7 +76,7 @@ class Adapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
         return Craft::$app->getView()->renderTemplate('postmark/settings', [
             'adapter' => $this,

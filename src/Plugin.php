@@ -19,7 +19,7 @@ use yii\base\Event;
 class Plugin extends \craft\base\Plugin
 {
     /**
-     * @var @inheritdoc
+     * @inheritdoc
      */
     public $schemaVersion = '2.0.1';
 

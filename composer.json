@@ -29,6 +29,7 @@
     "wildbit/swiftmailer-postmark": "^3.3.0"
   },
   "require-dev": {
+    "phpstan/phpstan": "^0.12.96",
     "swiftmailer/swiftmailer": "~6.0"
   },
   "autoload": {
@@ -40,6 +41,9 @@
     "psr-4": {
       "craftcms\\postmark\\tests\\": "tests/src/"
     }
+  },
+  "scripts": {
+    "phpstan": "phpstan --memory-limit=1G"
   },
   "extra": {
     "name": "Postmark",

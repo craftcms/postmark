@@ -36,7 +36,7 @@ composer require craftcms/postmark
 Once Postmark is installed:
 
 1. Go to **Settings** → **Email**.
-2. Change the **Transport Type** setting to **Postmark**.
+2. Change the **Transport Type** setting to **Postmark**. Also, ensure that your System Email Address in your Craft Email Settings matches your confirmed [Sender Signature email address in Postmark](https://account.postmarkapp.com/signature_domains). 
 3. Enter your **Server Token** (which you can get from your [server](https://account.postmarkapp.com/servers/) page under “API Tokens”).
 4. If you wish to send mail using a custom [Message Stream](https://postmarkapp.com/support/article/1207-how-to-create-and-send-through-message-streams), set the **Message Stream ID**. (The default transactional Message Stream will be used if this is left blank.)
 5. Click **Save**.

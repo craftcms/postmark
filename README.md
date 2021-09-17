@@ -28,7 +28,7 @@ cd /path/to/my-project.test
 composer require craftcms/postmark
 
 # tell Craft to install the plugin
-./craft install/plugin postmark
+./craft plugin/install postmark
 ```
 
 ## Setup

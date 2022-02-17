@@ -7,8 +7,9 @@ namespace craftcms\postmark;
 
 use Craft;
 use craft\behaviors\EnvAttributeParserBehavior;
+use craft\helpers\App;
 use craft\mail\transportadapters\BaseTransportAdapter;
-use Postmark\Transport;
+use Symfony\Component\Mailer\Bridge\Postmark\Transport\PostmarkApiTransport;
 
 /**
  * Adapter represents the Postmark mail adapter.
@@ -29,7 +30,7 @@ class Adapter extends BaseTransportAdapter
     /**
      * @var string
      */
-    public string $token;
+    public ?string $token = null;
 
     /**
      * @var string|null
@@ -88,9 +89,12 @@ class Adapter extends BaseTransportAdapter
      */
     public function defineTransport()
     {
-        return [
-            'class' => Transport::class,
-            'constructArgs' => [Craft::parseEnv($this->token), ['X-PM-Message-Stream' => Craft::parseEnv($this->messageStream)]],
-        ];
+        $transport = new PostmarkApiTransport(App::parseEnv($this->token));
+
+        if ($this->messageStream) {
+            $transport->setMessageStream($this->messageStream);
+        }
+
+        return $transport;
     }
 }

@@ -25,13 +25,13 @@
     "rss": "https://github.com/craftcms/postmark/commits/master.atom"
   },
   "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "craftcms/cms": "^4.0.0-alpha",
-    "wildbit/swiftmailer-postmark": "^3.3.0"
+    "symfony/postmark-mailer": "^v6.0.3"
   },
   "require-dev": {
-    "phpstan/phpstan": "^0.12.96",
-    "swiftmailer/swiftmailer": "~6.0"
+    "phpstan/phpstan": "^0.12.96"
   },
   "autoload": {
     "psr-4": {
@@ -50,5 +50,11 @@
     "name": "Postmark",
     "handle": "postmark",
     "documentationUrl": "https://github.com/craftcms/postmark/blob/master/README.md"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
   }
 }

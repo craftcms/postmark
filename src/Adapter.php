@@ -92,7 +92,7 @@ class Adapter extends BaseTransportAdapter
         $transport = new PostmarkApiTransport(App::parseEnv($this->token));
 
         if ($this->messageStream) {
-            $transport->setMessageStream($this->messageStream);
+            $transport->setMessageStream(App::parseEnv($this->messageStream));
         }
 
         return $transport;

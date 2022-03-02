@@ -87,7 +87,7 @@ class Adapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function defineTransport()
+    public function defineTransport(): array|\Symfony\Component\Mailer\Transport\AbstractTransport
     {
         $transport = new PostmarkApiTransport(App::parseEnv($this->token));
 

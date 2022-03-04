@@ -24,12 +24,14 @@
     "docs": "https://github.com/craftcms/postmark/blob/master/README.md",
     "rss": "https://github.com/craftcms/postmark/commits/master.atom"
   },
+  "minimum-stability": "dev",
+  "prefer-stable":  true,
   "require": {
     "craftcms/cms": "^3.4.0",
     "wildbit/swiftmailer-postmark": "^3.3.0"
   },
   "require-dev": {
-    "phpstan/phpstan": "^0.12.96",
+    "craftcms/phpstan": "dev-main",
     "swiftmailer/swiftmailer": "~6.0"
   },
   "autoload": {
@@ -42,12 +44,18 @@
       "craftcms\\postmark\\tests\\": "tests/src/"
     }
   },
-  "scripts": {
-    "phpstan": "phpstan --memory-limit=1G"
-  },
   "extra": {
     "name": "Postmark",
     "handle": "postmark",
     "documentationUrl": "https://github.com/craftcms/postmark/blob/master/README.md"
+  },
+  "scripts": {
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
   }
 }

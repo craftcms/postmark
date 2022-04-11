@@ -31,6 +31,7 @@
     "symfony/postmark-mailer": "^v6.0.3"
   },
   "require-dev": {
+    "craftcms/ecs": "dev-main",
     "craftcms/phpstan": "dev-main",
     "craftcms/rector": "dev-main"
   },
@@ -50,6 +51,8 @@
     "documentationUrl": "https://github.com/craftcms/postmark/blob/master/README.md"
   },
   "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
     "phpstan": "phpstan --memory-limit=1G"
   },
   "config": {

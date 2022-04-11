@@ -5,7 +5,6 @@
 
 namespace craftcms\postmark;
 
-use Craft;
 use craft\events\RegisterComponentTypesEvent;
 use craft\helpers\MailerHelper;
 use yii\base\Event;

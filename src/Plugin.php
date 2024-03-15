@@ -31,6 +31,7 @@ class Plugin extends \craft\base\Plugin
 
         $eventName = defined(sprintf('%s::EVENT_REGISTER_MAILER_TRANSPORT_TYPES', MailerHelper::class))
             ? MailerHelper::EVENT_REGISTER_MAILER_TRANSPORT_TYPES // Craft 4
+            /** @phpstan-ignore-next-line */
             : MailerHelper::EVENT_REGISTER_MAILER_TRANSPORTS; // Craft 5+
 
         Event::on(

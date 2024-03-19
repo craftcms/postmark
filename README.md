@@ -6,7 +6,7 @@ This plugin provides a [Postmark](http://www.postmarkapp.com/) integration for [
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0 or later.
+This plugin requires Craft CMS 4.0.0+ or 5.0.0+.
 
 ## Installation
 

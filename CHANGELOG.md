@@ -6,8 +6,12 @@
 
 ## 3.0.0 - 2022-05-03
 
-### Added
 - Added Craft 4 compatibility.
+
+## 2.2.0 - 2024-03-27
+
+- Postmark now requires Craft 3.4 or later.
+- Fixed a bug where transport errors were not being logged. ([#19](https://github.com/craftcms/postmark/issues/19), [#24](https://github.com/craftcms/postmark/pull/24))
 
 ## 2.1.0 - 2021-02-10
 

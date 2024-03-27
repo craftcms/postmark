@@ -1,7 +1,6 @@
 {
   "name": "craftcms/postmark",
   "description": "Postmark adapter for Craft CMS",
-  "version": "2.1.0",
   "type": "craft-plugin",
   "keywords": [
     "cms",

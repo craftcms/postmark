@@ -9,6 +9,7 @@ use Craft;
 use craft\behaviors\EnvAttributeParserBehavior;
 use craft\mail\transportadapters\BaseTransportAdapter;
 use Postmark\Transport;
+use Postmark\ThrowExceptionOnFailurePlugin;
 
 /**
  * Adapter represents the Postmark mail adapter.
@@ -88,9 +89,11 @@ class Adapter extends BaseTransportAdapter
      */
     public function defineTransport()
     {
-        return [
-            'class' => Transport::class,
-            'constructArgs' => [Craft::parseEnv($this->token), ['X-PM-Message-Stream' => Craft::parseEnv($this->messageStream)]],
-        ];
+        $transport = new Transport(Craft::parseEnv($this->token), ['X-PM-Message-Stream' => Craft::parseEnv($this->messageStream)]);
+        
+        // Throw an error on message failure
+        $transport->registerPlugin(new ThrowExceptionOnFailurePlugin());
+
+        return $transport;
     }
 }

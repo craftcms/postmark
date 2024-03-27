@@ -1,6 +1,9 @@
 # Release Notes for Postmark for Craft CMS
 
-## Unreleased
+## 2.1.1 - 2024-03-27
+
+### Fixed
+- Fixed a bug where transport errors were not being logged. ([#19](https://github.com/craftcms/postmark/issues/19), [#24](https://github.com/craftcms/postmark/pull/24))
 
 ### Changed
 - Postmark now requires Craft 3.4 or later.

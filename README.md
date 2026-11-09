@@ -6,7 +6,7 @@ This plugin provides a [Postmark](http://www.postmarkapp.com/) integration for [
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0.0+ or 5.0.0+.
+This plugin requires Craft CMS 4.0.0+ or 5.0.0+, or 6.0.0-alpha.1+ with the `craftcms/yii2-adapter` package.
 
 ## Installation
 
@@ -42,3 +42,51 @@ Once Postmark is installed:
 5. Click **Save**.
 
 > **Tip:** The Server Token and Message Stream ID settings can be set using environment variables. See [Environmental Configuration](https://craftcms.com/docs/3.x/config/#environmental-configuration) in the Craft docs to learn more about that.
+
+## Craft 6
+
+Craft 6 sends email through [Laravel mailers](https://laravel.com/docs/mail). Laravel has its own Postmark driver, so you don’t need this plugin once you’ve configured it.
+
+With the `craftcms/yii2-adapter` package installed, Craft keeps sending email through the Postmark settings in your project config until you configure a Laravel mailer. It uses them as the `craft-transport` mailer, which is the default mailer unless you select a mailer in Settings → Email, set the `MAIL_MAILER` environment variable, or change the default mailer in `config/mail.php`. Craft logs a deprecation warning while it does this.
+
+To configure Laravel’s Postmark driver:
+
+1. Require Symfony’s Postmark transport and HTTP client. Removing this plugin removes them too, otherwise.
+
+   ```bash
+   composer require symfony/postmark-mailer symfony/http-client
+   ```
+
+2. Check that the `mailers` array in `config/mail.php` has a `postmark` mailer. If you set a **Message Stream ID**, add `message_stream_id`, which Laravel’s default config leaves commented out. Without it, Postmark uses the default transactional Message Stream.
+
+   ```php
+   'postmark' => [
+       'transport' => 'postmark',
+       'message_stream_id' => env('POSTMARK_MESSAGE_STREAM_ID'),
+   ],
+   ```
+
+3. Check that `config/services.php` has your Server Token. Projects upgraded from Craft 5 read `POSTMARK_TOKEN`, as below; new Craft 6 projects read `POSTMARK_API_KEY`, with a `key` setting. Either works.
+
+   ```php
+   'postmark' => [
+       'token' => env('POSTMARK_TOKEN'),
+   ],
+   ```
+
+4. Set the environment variables in `.env`.
+
+   ```bash
+   MAIL_MAILER=postmark
+   POSTMARK_TOKEN=your-server-token
+   POSTMARK_MESSAGE_STREAM_ID=your-message-stream-id
+   ```
+
+5. Send a test email from Settings → Email, or with `php artisan craft:mailer:test`.
+
+Then uninstall the plugin and remove it from your project:
+
+```bash
+php artisan craft:plugin:uninstall postmark
+composer remove craftcms/postmark
+```

@@ -40,7 +40,7 @@ class Adapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'token' => Craft::t('postmark', 'Token'),

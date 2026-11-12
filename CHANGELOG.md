@@ -1,8 +1,8 @@
 # Release Notes for Postmark for Craft CMS
 
-## Unreleased
+## 3.2.0 - 2026-11-12
 
-- Added Craft 6 compatibility, when the `craftcms/yii2-adapter` package is installed. Craft keeps sending email through the Postmark settings in the project config until Laravel’s Postmark driver is configured. ([Craft 6 instructions](https://github.com/craftcms/postmark/blob/3.x/README.md#craft-6))
+- Added Craft 6 compatibility, when the `craftcms/yii2-adapter` package is installed. Craft can keep sending email through the Postmark settings in the project config, as the `craft-transport` mailer. ([Craft 6 instructions](https://github.com/craftcms/postmark/blob/3.x/README.md#craft-6))
 - Added support for `symfony/postmark-mailer` 8.x.
 - Postmark now requires `symfony/http-client`.
 

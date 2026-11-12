@@ -47,7 +47,9 @@ Once Postmark is installed:
 
 Craft 6 sends email through [Laravel mailers](https://laravel.com/docs/mail). Laravel has its own Postmark driver, so you don’t need this plugin once you’ve configured it.
 
-With the `craftcms/yii2-adapter` package installed, Craft keeps sending email through the Postmark settings in your project config until you configure a Laravel mailer. It uses them as the `craft-transport` mailer, which is the default mailer unless you select a mailer in Settings → Email, set the `MAIL_MAILER` environment variable, or change the default mailer in `config/mail.php`. Craft logs a deprecation warning while it does this.
+With the `craftcms/yii2-adapter` package installed, Craft can keep sending email through the Postmark settings in your project config, as the `craft-transport` mailer. Craft logs a deprecation warning while it does this.
+
+To send email through this plugin, set `MAIL_MAILER=craft-transport` in your environment, or select `craft-transport` as the **Mailer** in Settings → Email. `MAIL_MAILER` applies to all email. The Settings → Email mailer applies to email that Craft sends, such as system messages and test emails. If you do neither, Craft only uses `craft-transport` while `MAIL_MAILER` isn’t set and `config/mail.php` still defaults to `log`. New Craft 6 projects set `MAIL_MAILER=log`, which writes email to the log instead of sending it.
 
 To configure Laravel’s Postmark driver:
 

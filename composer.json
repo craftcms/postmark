@@ -27,8 +27,12 @@
   "prefer-stable": true,
   "require": {
     "php": "^8.0.2",
-    "craftcms/cms": "^4.0.0-alpha.1|^5.0.0-beta.1",
-    "symfony/postmark-mailer": "^v6.0.3|^7.0"
+    "craftcms/cms": "^4.0.0-alpha.1|^5.0.0-beta.1|^6.0.0-beta.1",
+    "symfony/http-client": "^6.0.3|^7.0|^8.0",
+    "symfony/postmark-mailer": "^v6.0.3|^7.0|^8.0"
+  },
+  "suggest": {
+    "craftcms/yii2-adapter": "Required to use Postmark with Craft CMS 6."
   },
   "require-dev": {
     "craftcms/ecs": "dev-main",
